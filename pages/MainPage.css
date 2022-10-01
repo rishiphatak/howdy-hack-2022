@@ -1,0 +1,5 @@
+.main-flexbox {
+    background: url("../public/tamustudents.png");
+    background-size: cover;
+    position: absolute;
+}
