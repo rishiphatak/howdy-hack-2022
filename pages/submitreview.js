@@ -1,13 +1,14 @@
-import {Button, Flex, Icon, SelectField, Text, TextField, View} from "@aws-amplify/ui-react";
+import {Button, Flex, Icon, SelectField, Text, TextField, View, withAuthenticator} from "@aws-amplify/ui-react";
 import React from "react";
-import { API } from "aws-amplify";
+import { API, Auth } from "aws-amplify";
 import {createSocialPostProf} from "../src/graphql/mutations";
 
 async function createReview(event) {
     event.preventDefault();
     const form = new FormData(event.target);
+    const user = await Auth.currentUserInfo();
     const data = {
-        author: "John Doe",
+        author: user.username,
         "class": form.get("className"),
         topic: form.get("title"),
         text: form.get("reviewText"),
@@ -23,7 +24,7 @@ async function createReview(event) {
     event.target.reset();
 }
 
-export default function submitReview() {
+function submitReview() {
     return (
         <View
             gap="0"
@@ -151,3 +152,5 @@ export default function submitReview() {
         </View>
     );
 }
+
+export default withAuthenticator(submitReview);

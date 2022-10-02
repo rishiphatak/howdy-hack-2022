@@ -2,11 +2,11 @@ import React from "react";
 import {SelectField, Text, View, withAuthenticator} from "@aws-amplify/ui-react";
 import {SocialPostCollection} from "../src/ui-components";
 import NavBar2 from "../src/ui-components/NavBar2";
-export default function Classes({ signOut }) {
+function Classes({ signOut }) {
     return (
         <View
             width="1440px"
-            height="1500px"
+            height="3000px"
             overflow="hidden"
             position="relative"
             padding="0px 0px 0px 0px"
@@ -15,7 +15,7 @@ export default function Classes({ signOut }) {
             <NavBar2
                 width="291px"
                 height="858px"
-                position="absolute"
+                position="fixed"
                 top="0px"
                 left="0px"
                 padding="0px 0px 0px 0px"
@@ -48,7 +48,7 @@ export default function Classes({ signOut }) {
                 transform="rotate(0deg)"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-            ></Text>
+            >Classes</Text>
             <SelectField
                 display="flex"
                 position="absolute"
@@ -90,3 +90,5 @@ export default function Classes({ signOut }) {
         </View>
     );
 }
+
+export default withAuthenticator(Classes);
