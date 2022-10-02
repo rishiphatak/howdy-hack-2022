@@ -8,16 +8,18 @@ async function createReview(event) {
     const form = new FormData(event.target);
     const data = {
         author: "John Doe",
-        name: form.get("className"),
-        something: form.get("title"),
+        "class": form.get("className"),
+        topic: form.get("title"),
         text: form.get("reviewText"),
         createdAt: "2021-09-08Z",
         likes: 405
     };
+    alert(data);
     await API.graphql({
         query: createSocialPostProf,
         variables: { input: data },
     });
+    alert("done");
     event.target.reset();
 }
 
@@ -35,14 +37,14 @@ export default function submitReview() {
             position="relative"
             padding="0px 0px 0px 0px"
             backgroundColor="rgba(255,255,255,1)"
+            as="form"
+            onSubmit={createReview}
         >
             <Flex
                 gap="24px"
                 direction="column"
                 position="relative"
                 padding="0px 0px 0px 0px"
-                as="form"
-                onSubmit={createReview}
             >
                 <Flex
                     gap="8px"
@@ -143,6 +145,7 @@ export default function submitReview() {
                     size="large"
                     isDisabled={false}
                     variation="primary"
+                    type="submit"
                 >Submit REView</Button>
             </Flex>
         </View>

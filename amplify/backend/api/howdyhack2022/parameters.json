@@ -1,5 +1,6 @@
 {
   "AppSyncApiName": "howdyhack2022",
-  "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBBillingMode": "PROVISIONED",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2022-10-02T03:26:19.314Z"
 }
