@@ -5,12 +5,9 @@
  **************************************************************************/
 
 import React from "react";
-import { SocialPostProf } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { FlexProps } from "@aws-amplify/ui-react";
-export declare type SocialPostProps = React.PropsWithChildren<Partial<FlexProps> & {
-    socialPostProf?: SocialPostProf;
-} & {
+import { ViewProps } from "@aws-amplify/ui-react";
+export declare type NavBar2Props = React.PropsWithChildren<Partial<ViewProps> & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function SocialPost(props: SocialPostProps): React.ReactElement;
+export default function NavBar2(props: NavBar2Props): React.ReactElement;

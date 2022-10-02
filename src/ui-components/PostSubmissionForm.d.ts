@@ -5,12 +5,9 @@
  **************************************************************************/
 
 import React from "react";
-import { SocialPostProf } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
-export declare type SocialPostProps = React.PropsWithChildren<Partial<FlexProps> & {
-    socialPostProf?: SocialPostProf;
-} & {
+export declare type PostSubmissionFormProps = React.PropsWithChildren<Partial<FlexProps> & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function SocialPost(props: SocialPostProps): React.ReactElement;
+export default function PostSubmissionForm(props: PostSubmissionFormProps): React.ReactElement;

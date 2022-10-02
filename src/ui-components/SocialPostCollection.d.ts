@@ -5,12 +5,16 @@
  **************************************************************************/
 
 import React from "react";
-import { SocialPostProf } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { FlexProps } from "@aws-amplify/ui-react";
-export declare type SocialPostProps = React.PropsWithChildren<Partial<FlexProps> & {
-    socialPostProf?: SocialPostProf;
+import { SocialPostProps } from "./SocialPost";
+import { CollectionProps } from "@aws-amplify/ui-react";
+export declare type SocialPostCollectionProps = React.PropsWithChildren<Partial<CollectionProps<any>> & {
+    items?: any[];
+    overrideItems?: (collectionItem: {
+        item: any;
+        index: number;
+    }) => SocialPostProps;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function SocialPost(props: SocialPostProps): React.ReactElement;
+export default function SocialPostCollection(props: SocialPostCollectionProps): React.ReactElement;

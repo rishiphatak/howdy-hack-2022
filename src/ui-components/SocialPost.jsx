@@ -10,7 +10,7 @@ import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function SocialPost(props) {
-  const { overrides, ...rest } = props;
+  const { socialPostProf, overrides, ...rest } = props;
   return (
     <Flex
       gap="16px"
@@ -69,7 +69,7 @@ export default function SocialPost(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="New Amplify Studio gives designers the ability to export UI to React code"
+              children={socialPostProf?.topic}
               {...getOverrideProps(
                 overrides,
                 "New Amplify Studio gives designers the ability to export UI to React code"
@@ -100,7 +100,7 @@ export default function SocialPost(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children="Nikhil S"
+                children={socialPostProf?.author}
                 {...getOverrideProps(overrides, "Nikhil S")}
               ></Text>
               <Text
@@ -119,7 +119,7 @@ export default function SocialPost(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children="2nd December 2021"
+                children={socialPostProf?.createdAt}
                 {...getOverrideProps(overrides, "2nd December 2021")}
               ></Text>
             </Flex>
@@ -160,7 +160,7 @@ export default function SocialPost(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="AWS Amplify Studio is a visual development environment for building full-stack web and mobile apps that grows with your business. Studio builds on existing backend building capabilities in AWS Amplify, allowing you to build your UI faster with a set of ready-to-use UI components that are editable in Figma. With Studio, you can quickly build an entire web app, front-to-back, with minimal coding, while still maintaining full control over your app design and behavior through code. Ship faster, scale effortlessly, and delight every user."
+              children={socialPostProf?.text}
               {...getOverrideProps(
                 overrides,
                 "AWS Amplify Studio is a visual development environment for building full-stack web and mobile apps that grows with your business. Studio builds on existing backend building capabilities in AWS Amplify, allowing you to build your UI faster with a set of ready-to-use UI components that are editable in Figma. With Studio, you can quickly build an entire web app, front-to-back, with minimal coding, while still maintaining full control over your app design and behavior through code. Ship faster, scale effortlessly, and delight every user."

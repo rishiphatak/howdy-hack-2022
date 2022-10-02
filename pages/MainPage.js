@@ -1,6 +1,7 @@
 import React from "react";
-import { Button, Flex, Text } from "@aws-amplify/ui-react";
-export default function MainPage() {
+import {Button, Flex, Text, withAuthenticator} from "@aws-amplify/ui-react";
+import Link from "next/link";
+function MainPage({ signOut }) {
     return (
         <Flex
             gap="31px"
@@ -27,7 +28,7 @@ export default function MainPage() {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-            >Rate My Professor: Texas A&M</Text>
+            >REViews</Text>
             <Button
                 display="flex"
                 gap="0"
@@ -66,7 +67,7 @@ export default function MainPage() {
                 isDisabled={false}
                 variation="default"
                 style={{color: "white"}}
-            >Classes
+            ><Link href="/classes">Classes</Link>
             </Button>
             <Button
                 display="flex"
@@ -91,3 +92,5 @@ export default function MainPage() {
         </Flex>
     );
 }
+
+export default MainPage;
