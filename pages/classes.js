@@ -1,13 +1,14 @@
 import React from "react";
-import {SelectField, Text, View, withAuthenticator} from "@aws-amplify/ui-react";
+import {Button, Flex, SelectField, Text, View, withAuthenticator} from "@aws-amplify/ui-react";
 import {SocialPostCollection} from "../src/ui-components";
 import NavBar2 from "../src/ui-components/NavBar2";
+import Link from "next/link";
 function Classes({ signOut }) {
     return (
-        <View
-            width="1440px"
-            height="3000px"
-            overflow="hidden"
+        <Flex
+            // width="1440px"
+            // height="3000px"
+            // overflow="hidden"
             position="relative"
             padding="0px 0px 0px 0px"
             backgroundColor="rgba(255,255,255,1)"
@@ -20,6 +21,16 @@ function Classes({ signOut }) {
                 left="0px"
                 padding="0px 0px 0px 0px"
             ></NavBar2>
+            <Button
+                position="absolute"
+                top="50px"
+                left="80%"
+                width="200px"
+                backgroundColor="rgba(128,0,0,1)"
+                color="white"
+            >
+                <Link href="/submitreview">Submit your review</Link>
+            </Button>
             <View
                 width="649px"
                 height="103px"
@@ -87,7 +98,7 @@ function Classes({ signOut }) {
             >
                 <SocialPostCollection />
             </View>
-        </View>
+        </Flex>
     );
 }
 

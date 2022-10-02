@@ -15,12 +15,10 @@ async function createReview(event) {
         createdAt: "2021-09-08Z",
         likes: 405
     };
-    alert(data);
     await API.graphql({
         query: createSocialPostProf,
         variables: { input: data },
     });
-    alert("done");
     event.target.reset();
 }
 
